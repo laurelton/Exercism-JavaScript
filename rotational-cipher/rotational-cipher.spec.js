@@ -8,22 +8,22 @@ describe('RotationalCipher', function () {
     expect(rotationalCipher.rotate('a', 0)).toEqual(expected);
   });
 
-  xit('rotate a by 1', function () {
+  it('rotate a by 1', function () {
     var expected = 'b';
     expect(rotationalCipher.rotate('a', 1)).toEqual(expected);
   });
 
-  xit('rotate a by 26, same output as input', function () {
+  it('rotate a by 26, same output as input', function () {
     var expected = 'a';
     expect(rotationalCipher.rotate('a', 26)).toEqual(expected);
   });
 
-  xit('rotate m by 13', function () {
+  it('rotate m by 13', function () {
     var expected = 'z';
     expect(rotationalCipher.rotate('m', 13)).toEqual(expected);
   });
 
-  xit('rotate n by 13 with wrap around alphabet', function () {
+  it('rotate n by 13 with wrap around alphabet', function () {
     var expected = 'a';
     expect(rotationalCipher.rotate('n', 13)).toEqual(expected);
   });

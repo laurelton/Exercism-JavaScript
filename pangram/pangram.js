@@ -11,17 +11,7 @@ class Pangram {
     }
 
     isPangram() {
-        // return this._letters.every(elem => {this._sentence.match(new RegExp(elem))});
-        for (let lttr in this._letters) {
-            let regEx = new RegExp(this._letters[lttr]);
-            let match = this._sentence.match(regEx);
-
-            if (match == null) {
-                return false;
-            }
-        }
-
-        return true;
+        return this._letters.every(lttr => this._sentence.match(lttr) !== null);
     }
 }
 

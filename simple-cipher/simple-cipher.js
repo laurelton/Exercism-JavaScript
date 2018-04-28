@@ -2,11 +2,11 @@ class Cipher {
     constructor(key='defaultkey') {
         let matches = key.match(/[A-Z0-9]/);
         
-        if (key.length == 0 || (matches != null && matches.length > 0)) {
+        if (key.length === 0 || (matches !== null && matches.length > 0)) {
             throw new Error('Bad key');
         }
 
-        if (key == 'defaultkey') {
+        if (key === 'defaultkey') {
             key = this.generateKey();
         }
 
@@ -64,5 +64,7 @@ class Cipher {
     }
 }
 
-
 module.exports = Cipher;
+
+let cipher = new Cipher('aaaaaaaaaa');
+console.log(cipher.encode('aaaaaaaaaa'));

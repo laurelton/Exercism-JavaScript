@@ -1,9 +1,13 @@
 function reverseString(input) {
-    // let letters = input.split('');
-    return input.split('').reverse().join('');
+    // return input
+    //     .split('')
+    //     .reverse()
+    //     .join('');
+    if (input.length <= 1) {
+        return input;
+    }
+
+    return input[input.length - 1] + reverseString(input.slice(0, input.length - 1));
 }
-// var reverseString = function(input) {
-//     return input.split('').reverse().join('');
-// }
 
 module.exports = reverseString;

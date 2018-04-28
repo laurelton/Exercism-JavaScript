@@ -13,3 +13,5 @@ class Gigasecond {
 }
 
 module.exports = Gigasecond;
+
+console.log(1e9);

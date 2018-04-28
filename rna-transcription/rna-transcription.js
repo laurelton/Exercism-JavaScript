@@ -1,5 +1,5 @@
 class DnaTranscriber {
-    toRna(input) {
+    toRna(dna) {
         let translations = {
             'G': 'C',
             'C': 'G',
@@ -7,17 +7,13 @@ class DnaTranscriber {
             'A': 'U'
         };
 
-        let str = '';
-        let letters = input.split('');
-        for (let i = 0; i < letters.length; i++) {
-            if (translations.hasOwnProperty(letters[i])) {
-            str += translations[letters[i]];
-            } else {
-                throw new Error('Invalid input');
-            }
-        }        
+        let rna = dna.split('').reduce((str, letter) => str += translations[letter] ? translations[letter] : '', '');
+        
+        if (rna.length !== dna.length) {
+            throw new Error('Invalid input');
+        }
 
-        return str;
+        return rna;
     }
 }
 
